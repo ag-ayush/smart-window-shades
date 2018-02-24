@@ -17,11 +17,9 @@ GPIO pins exported for use via command line
 """
 GPIO.setwarnings(False)
 
-"""
-Set channel 15 and 16 to output
-"""
-chan_list = [15, 16]
-GPIO.setup(chan_list, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(33, GPIO.OUT, initial=1)
+p = GPIO.PWM(33, 1000)
+p.start(0)
 
 # Create an instance of flask called "app"
 app = Flask(__name__)
@@ -41,12 +39,12 @@ def index():
 #     GPIO.output(int(id), int(level))
 #     return "OK"
 
-@app.route('/gpio/<string:id>/')
-def setPinLevel2(id):
-    print("Setting " + id + " to high for 2 seconds!")
-    GPIO.output(int(id), GPIO.HIGH)
-    time.sleep(2)
-    GPIO.output(int(id), GPIO.LOW)
+@app.route('/gpio/<string:percent>/')
+def setPinLevel2(percent):
+    print("Setting 33 to " + percent + "%")
+    # GPIO.output(33, percent)
+    p.ChangeDutyCycle(float(percent))
+    time.sleep(1)
     return render_template('index.html')
 
 # If we're running this script directly, this portion executes. The Flask
