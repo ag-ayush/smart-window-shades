@@ -2,28 +2,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <title>Button demo</title>
-    <style>
-        button {
-            border: 2px solid yellow;
-            color: white;
-            background-color: black;
-            font-size: 30px;
-        }
-
-        button:hover {
-            border: 2px solid yellow;
-            color: yellow;
-            background-color: black;
-            font-size: 30px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1">
+    <link rel="stylesheet" href="https://s3.csh.rit.edu/csh-material-bootstrap/4.0.0-beta.3/dist/csh-material-bootstrap.min.css" media="screen">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <button onclick="onClick(this)" id="button1">Button 1</button>
-    <button onclick="onClick(this)" id="button2">Button 2</button>
-</body>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Smart Shades</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" style="">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div class="card text-white bg-dark mb-3" >
+  <center>
+  <div class="card-header">Shades</div>
+  <div class="card-body">
+    <h4 class="card-title">All The Way</h4>
+    <button type="button" class="btn btn-primary">100 %</button>
+    <h4 class="card-title">Three fourths of the way</h4>
+    <button type="button" class="btn btn-primary">75 %</button>
+    <h4 class="card-title">Half Way</h4>
+    <button type="button" class="btn btn-primary">50 %</button>
+    <h4 class="card-title">A quart</h4>
+    <button type="button" class="btn btn-primary">25 %</button>
+    <h4 class="card-title">No way</h4>
+    <button type="button" class="btn btn-primary">0 %</button>
+  </div>
+  </center>
+</div>
+
+</body>
 </html>
