@@ -69,7 +69,6 @@ def percentage_to_steps(percent):
 
 def motor_output(percent):
     steps = percentage_to_steps(percent)
-    print("Steps", steps)
     # track the number of steps taken
     StepCounter = 0
     # wait time controls speed
