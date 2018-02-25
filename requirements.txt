@@ -1,7 +1,4 @@
 flask
-python-dev
-python-pip
-ipython
 RPi.GPIO
 gunicorn
 
