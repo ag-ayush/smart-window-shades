@@ -30,7 +30,7 @@ print("You told me to turn %s %s steps.") % (direction, steps)
 gpio.setmode(gpio.BOARD)
 gpio.setup(DIRECTION_PIN, gpio.OUT)
 gpio.setup(STEP_PIN, gpio.OUT)
-time.sleep(1)
+# time.sleep(1)
 
 if direction == 'left':
     print("LEFT")
@@ -40,10 +40,10 @@ elif direction == 'right':
     gpio.output(DIRECTION_PIN, False)
 
 
-# track the numebr of steps taken
+# track the number of steps taken
 StepCounter = 0
-# waittime controls speed
-WaitTime = 0.005
+# wait time controls speed
+WaitTime = 0.001
 
 # 200 Steps = 1 Revolution
 while StepCounter < steps:
