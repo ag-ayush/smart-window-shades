@@ -11,8 +11,8 @@ GPIO.setmode(GPIO.BOARD)
 """
 Brightness is controlled via PWM
 """
-GPIO.setup(33, GPIO.OUT, initial=1)
-p = GPIO.PWM(33, 1000)
+GPIO.setup(3, GPIO.OUT, initial=1)
+p = GPIO.PWM(3, 1000)
 p.start(0)
 p.ChangeDutyCycle(25)
 sleep(2)
