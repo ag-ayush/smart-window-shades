@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template
+from flask import render_template, redirect, Flask
 import RPi.GPIO as GPIO
 import time
 
@@ -57,7 +56,7 @@ def setPinLevel2(percent):
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return render_template('index.html')
+    return redirect('https://shades.csh.rit.edu')
 
 
 def percentage_to_steps(percent):

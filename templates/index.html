@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="js/caller.js"></script>
 </head>
 
 <body>
@@ -25,15 +26,20 @@
   <div class="card-header">Shades</div>
   <div class="card-body">
     <h4 class="card-title">All The Way</h4>
-    <a class="nav-link active" href="129.21.76.35/gpio/100/">100 %</a>
+    <a class="nav-link active" href="http://129.21.76.35:5000/gpio/100/">100 %</a>
+    <button type="button" class="btn btn-secondary" id="100" value="/gpio/100">100 %</button>
     <h4 class="card-title">Three fourths of the way</h4>
-    <a class="nav-link active" href="129.21.76.35/gpio/75/">75 %</a>
+    <a class="nav-link active" href="http://129.21.76.35:5000/gpio/75/">75 %</a>
+    <button type="button" class="btn btn-secondary" id="75" value="/gpio/75">75 %</button>
     <h4 class="card-title">Half Way</h4>
-    <a class="nav-link active" href="129.21.76.35/gpio/50/">50 %</a>
+    <a class="nav-link active" href="http://129.21.76.35:5000/gpio/50/">50 %</a>
+    <button type="button" class="btn btn-secondary" id="50" value="/gpio/50">50 %</button>
     <h4 class="card-title">A quart</h4>
-    <a class="nav-link active" href="129.21.76.35/gpio/25/">25 %</a>
+    <a class="nav-link active" href="http://129.21.76.35:5000/gpio/25/">25 %</a>
+    <button type="button" class="btn btn-secondary" id="25" value="/gpio/25">25 %</button>
     <h4 class="card-title">No way</h4>
-    <a class="nav-link active" href="129.21.76.35/gpio/0/">0 %</a>
+    <a class="nav-link active" href="http://129.21.76.35:5000/gpio/0/">0 %</a>
+    <button type="button" class="btn btn-secondary" id="0" value="/gpio/0">0 %</button>
   </div>
   </center>
 </div>
