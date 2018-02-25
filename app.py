@@ -87,4 +87,5 @@ def motor_output(percent):
 #  is essential to telling the system that we want the app visible to the
 #  outside world.
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    #app.run(host='0.0.0.0', port=5000)
+    app.run()
