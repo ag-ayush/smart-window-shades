@@ -47,23 +47,5 @@
 
 <script type="text/javascript" src="/static/js/caller.js"></script>
 
-<script>
-    document.getElementById("100").addEventListener("click", func);
-
-    function func() {
-        $.ajax({
-            type: 'POST',
-            url: "http://129.21.76.35:5000/gpio/100/",
-
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(response) {
-                console.log(response);
-            }
-        });
-    }
-</script>
-
 </body>
 </html>
