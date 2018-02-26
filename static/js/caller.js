@@ -3,7 +3,7 @@ $('#100').click(function(e){
 
     $.ajax({
         type: "POST",
-        url: "129.21.76.35:5000" + $("#100".val()),
+        url: "http://129.21.76.35:5000/gpio/100/",
 
         success: function(response) {
             console.log(response);
