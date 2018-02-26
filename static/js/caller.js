@@ -5,11 +5,11 @@ $('#100').click(function(e){
         type: "POST",
         url: "http://129.21.76.35:5000/gpio/100/",
 
-        success: function(response) {
-            console.log(response);
+        success: function() {
+            console.log("SUCCESS");
         },
-        error: function(response) {
-            console.log(response);
+        error: function() {
+            console.log("FAIL");
         }
     });
 });
