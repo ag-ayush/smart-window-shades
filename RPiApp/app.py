@@ -51,12 +51,14 @@ def setPinLevel2(percent):
     if output_percentage < 0:
         print("UP")
         GPIO.output(DIRECTION_PIN, True)
+    elif output_percentage == 0:
+        print("NO CHANGE")
     else:
         print("DOWN")
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return index()
+    return "SUCCESS"
 
 
 def percentage_to_steps(percent):
@@ -68,6 +70,7 @@ def percentage_to_steps(percent):
 
 def motor_output(percent):
     steps = percentage_to_steps(percent)
+    print("STEPS: ", steps)
     # track the number of steps taken
     StepCounter = 0
     # wait time controls speed
