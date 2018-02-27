@@ -1,4 +1,4 @@
-$('#100').click(function(){
+$('#100').click(function(e){
     $.ajax({
         type: "POST",
         url: "https://129.21.76.35:5000/gpio/100/",
