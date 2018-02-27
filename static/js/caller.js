@@ -6,7 +6,7 @@ $('#100').click(function(e){
         jsonp : false,
         jsonpCallback: false,
         cache: true,
-        dataType: 'text',
+        dataType: 'jsonp',
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
@@ -20,7 +20,7 @@ $('#75').click(function(e){
         jsonp : false,
         jsonpCallback: false,
         cache: true,
-        dataType: 'text',
+        dataType: 'jsonp',
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
@@ -34,7 +34,7 @@ $('#50').click(function(e){
         jsonp : false,
         jsonpCallback: false,
         cache: true,
-        dataType: 'text',
+        dataType: 'jsonp',
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
@@ -48,7 +48,7 @@ $('#25').click(function(e){
         jsonp : false,
         jsonpCallback: false,
         cache: true,
-        dataType: 'text',
+        dataType: 'jsonp',
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
@@ -62,7 +62,7 @@ $('#0').click(function(e){
         jsonp : false,
         jsonpCallback: false,
         cache: true,
-        dataType: 'text',
+        dataType: 'jsonp',
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });

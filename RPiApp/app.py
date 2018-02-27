@@ -58,7 +58,7 @@ def setPinLevel2(percent):
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return "Success"
+    return "{result:'success'}"
 
 def percentage_to_steps(percent):
     #TODO: Change to number of steps for curtain to go from 0 to 100
