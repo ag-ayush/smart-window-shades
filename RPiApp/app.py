@@ -30,6 +30,7 @@ CURRENT = 0
 # Create an instance of flask called "app"
 app = Flask(__name__)
 
+
 # This is our default handler, if no path is given
 @app.route("/")
 def index():
@@ -58,13 +59,14 @@ def setPinLevel2(percent):
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return "{result:200}"
+    return "{result:200}", 200
+
 
 def percentage_to_steps(percent):
-    #TODO: Change to number of steps for curtain to go from 0 to 100
+    # TODO: Change to number of steps for curtain to go from 0 to 100
     FULL_REV_STEPS = 200
     percent = abs(percent)
-    return int(FULL_REV_STEPS*(percent/100.0))
+    return int(FULL_REV_STEPS * (percent / 100.0))
 
 
 def motor_output(percent):
@@ -84,6 +86,7 @@ def motor_output(percent):
 
         # Wait before taking the next step...this controls rotation speed
         time.sleep(WaitTime)
+
 
 # The "host=0.0.0.0" part is essential to telling the system that we want the app visible to the
 # outside world.
