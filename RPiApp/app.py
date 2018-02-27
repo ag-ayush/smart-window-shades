@@ -56,7 +56,7 @@ def setPinLevel2(percent):
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return redirect('https://shades.csh.rit.edu')
+    return app.route('/')
 
 
 def percentage_to_steps(percent):
