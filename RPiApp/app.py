@@ -56,7 +56,7 @@ def setPinLevel2(percent):
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return app.route('/')
+    return index()
 
 
 def percentage_to_steps(percent):
