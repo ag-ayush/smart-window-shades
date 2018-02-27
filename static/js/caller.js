@@ -5,7 +5,6 @@ $('#100').click(function(){
         crossDomain: true,
         dataType: 'jsonp',
         success: function() { console.log("SUCCESS");},
-        error: function() { console.log("FAIL");},
-        beforeSend: setHeader
+        error: function() { console.log("FAIL");}
     });
 });
