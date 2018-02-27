@@ -5,7 +5,7 @@ $('#100').click(function(){
         crossDomain: true,
 //      Needed because of callback gibberish in url at the end.
         jsonp : false,
-        jsonpCallback: 'jsonCallback',
+        jsonpCallback: '',
 
         dataType: 'jsonp',
         success: function() { console.log("SUCCESS");},
