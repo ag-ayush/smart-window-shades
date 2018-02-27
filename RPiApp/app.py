@@ -1,6 +1,7 @@
 from flask import render_template, redirect, Flask
 import RPi.GPIO as GPIO
 import time
+from flask_cors import CORS, cross_origin
 
 """
 Sets up the RPi lib to use the Board mappings
@@ -29,7 +30,7 @@ CURRENT = 0
 
 # Create an instance of flask called "app"
 app = Flask(__name__)
-
+CORS(app)
 
 # This is our default handler, if no path is given
 @app.route("/")
@@ -59,7 +60,7 @@ def setPinLevel2(percent):
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return "{result:200}", 200
+    return 200
 
 
 def percentage_to_steps(percent):

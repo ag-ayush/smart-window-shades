@@ -6,3 +6,4 @@ IOT/Smart Window Shades
 * python-pip
 * pip ipython
 * pip RPi.GPIO
+* pip flask-cors
