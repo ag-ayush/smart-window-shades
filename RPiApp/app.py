@@ -58,7 +58,7 @@ def setPinLevel2(percent):
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return "SUCCESS"
+    # Does not return anything since the call is made by ajax.
 
 
 def percentage_to_steps(percent):
