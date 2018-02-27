@@ -1,4 +1,4 @@
-from flask import render_template, redirect, Flask
+from flask import render_template, Flask
 import RPi.GPIO as GPIO
 import time
 from flask_cors import CORS, cross_origin
@@ -39,7 +39,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/gpio/<string:percent>/')
+@app.route('/gpio/<string:percent>/', methods=["POST"])
+@cross_origin()
 def setPinLevel2(percent):
     if int(percent) > 100:
         percent = "100"
@@ -60,7 +61,7 @@ def setPinLevel2(percent):
         GPIO.output(DIRECTION_PIN, False)
 
     motor_output(output_percentage)
-    return 200
+    return "{200}"
 
 
 def percentage_to_steps(percent):
