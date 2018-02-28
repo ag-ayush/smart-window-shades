@@ -2,22 +2,34 @@ $('#100').click(function(e){
     $.ajax({
         type: "POST",
         url: "http://129.21.76.35:5000/gpio/100/",
-        success: function() { console.log("SUCCESS");},
-        error: function() { console.log("FAIL");}
+        success: function() { console.alert("SUCCESS");},
+        error: function() { console.alert("FAIL");}
     });
 });
 
-for(var i = 0; i < 99; ++i)
+for(var i = 0; i < 99; ++i) {
     var value = '#' + i.toString();
-    console.log("Value: " + value)
-    $(value).click(function(e){
-        $.ajax({
-            type: "POST",
-            url: "http://129.21.76.35:5000/gpio/" + i.toString() + "/",
-            success: function() { console.log("SUCCESS");},
-            error: function() { console.log("FAIL");}
+        console.log("Value: " + value)
+        $(value).click(function(e){
+            $.ajax({
+                type: "POST",
+                url: "http://129.21.76.35:5000/gpio/" + i.toString() + "/",
+                success: function() { console.alert("SUCCESS");},
+                error: function() { console.alert("FAIL");}
+            });
         });
+}
+
+$('.button').click(function(e){
+    console.log("Button value attempt: " + document.getElementsByClassName("button"));
+    $.ajax({
+        type: "POST",
+        url: "http://129.21.76.35:5000/gpio/100/",
+        success: function() { console.alert("SUCCESS");},
+        error: function() { console.alert("FAIL");}
     });
+});
+
 
 //$('#50').click(function(e){
 //    $.ajax({
