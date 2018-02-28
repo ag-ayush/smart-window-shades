@@ -2,27 +2,26 @@ $('#100').click(function(e){
     $.ajax({
         type: "POST",
         url: "http://129.21.76.35:5000/gpio/100/",
-        success: function() { alert("SUCCESS");},
-        error: function() { alert("FAIL");}
+        success: function() { console.alert("SUCCESS");},
+        error: function() { console.alert("FAIL");}
     });
 });
 
-var percents = [];
-for(var i = 0; i < 101; ++i) {
-    percents.push(i);
-}
 
-$.each(percents, function(e, item) {
-    var b = '#' + i.toString();
-    $(b).click(function(e){
-        $.ajax({
-            type: "POST",
-            url: "http://129.21.76.35:5000/gpio/" + item.toString() + "/",
-            success: function() { alert("SUCCESS");},
-            error: function() { alert("FAIL");}
+for(var i = 0; i < 99; ++i) {
+    (function (i) {
+        var value = '#' + i.toString();
+        console.log("Value: " + value)
+        $(value).click(function(e){
+            $.ajax({
+                type: "POST",
+                url: "http://129.21.76.35:5000/gpio/" + i.toString() + "/",
+                success: function() { console.alert("SUCCESS");},
+                error: function() { console.alert("FAIL");}
+            });
         });
-    });
-})
+    })(i);
+}
 
 
 //$('#50').click(function(e){
