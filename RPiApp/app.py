@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from flask import render_template, Flask
 import RPi.GPIO as GPIO
 import time
@@ -93,5 +94,6 @@ def motor_output(percent):
 # The "host=0.0.0.0" part is essential to telling the system that we want the app visible to the
 # outside world.
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, ssl_context=('/home/pi/Documents/openssl/cert.pem',
-                                                    '/home/pi/Documents/openssl/key.pem'))
+    # app.run(host='0.0.0.0', port=5000, ssl_context=('/home/pi/Documents/openssl/server.crt',
+    #                                                 '/home/pi/Documents/openssl/privkey.'))
+    app.run(host='0.0.0.0', port=5000)
