@@ -9,10 +9,11 @@ $('#100').click(function(e){
 
 for(var i = 0; i < 99; ++i)
     var value = '#' + i.toString();
+    Console.log("Value: " + value)
     $(value).click(function(e){
         $.ajax({
             type: "POST",
-            url: "http://129.21.76.35:5000/gpio/75/",
+            url: "http://129.21.76.35:5000/gpio/" + i.toString() + "/",
             success: function() { console.log("SUCCESS");},
             error: function() { console.log("FAIL");}
         });
