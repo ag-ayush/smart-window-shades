@@ -2,33 +2,27 @@ $('#100').click(function(e){
     $.ajax({
         type: "POST",
         url: "http://129.21.76.35:5000/gpio/100/",
-        success: function() { console.alert("SUCCESS");},
-        error: function() { console.alert("FAIL");}
+        success: function() { alert("SUCCESS");},
+        error: function() { alert("FAIL");}
     });
 });
 
-for(var i = 0; i < 99; ++i) {
-    var value = '#' + i.toString();
-        console.log("Value: " + value)
-        $(value).click(function(e){
-            $.ajax({
-                type: "POST",
-                url: "http://129.21.76.35:5000/gpio/" + i.toString() + "/",
-                success: function() { console.alert("SUCCESS");},
-                error: function() { console.alert("FAIL");}
-            });
-        });
+var percents = [];
+for(var i = 0; i < 101; ++i) {
+    percents.push(i);
 }
 
-$('.button').click(function(e){
-    console.log("Button value attempt: " + document.getElementsByClassName("button"));
-    $.ajax({
-        type: "POST",
-        url: "http://129.21.76.35:5000/gpio/100/",
-        success: function() { console.alert("SUCCESS");},
-        error: function() { console.alert("FAIL");}
-    });
-});
+$.each(percents, function(e, item)) {
+    var b = '#' + i.toString();
+    $(b).click(function(e){
+                $.ajax({
+                    type: "POST",
+                    url: "http://129.21.76.35:5000/gpio/" + item.toString() + "/",
+                    success: function() { alert("SUCCESS");},
+                    error: function() { alert("FAIL");}
+                });
+            });
+}
 
 
 //$('#50').click(function(e){
