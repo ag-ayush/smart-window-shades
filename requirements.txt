@@ -1,4 +1,4 @@
 flask
-RPi.GPIO
+flask_cors
 gunicorn
-
+RPi.GPIO
