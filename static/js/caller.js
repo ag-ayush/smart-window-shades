@@ -12,17 +12,17 @@ for(var i = 0; i < 101; ++i) {
     percents.push(i);
 }
 
-$.each(percents, function(e, item)) {
+$.each(percents, function(e, item) {
     var b = '#' + i.toString();
     $(b).click(function(e){
-                $.ajax({
-                    type: "POST",
-                    url: "http://129.21.76.35:5000/gpio/" + item.toString() + "/",
-                    success: function() { alert("SUCCESS");},
-                    error: function() { alert("FAIL");}
-                });
-            });
-}
+        $.ajax({
+            type: "POST",
+            url: "http://129.21.76.35:5000/gpio/" + item.toString() + "/",
+            success: function() { alert("SUCCESS");},
+            error: function() { alert("FAIL");}
+        });
+    });
+})
 
 
 //$('#50').click(function(e){
