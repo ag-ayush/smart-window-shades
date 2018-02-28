@@ -9,7 +9,7 @@ $('#100').click(function(e){
 
 for(var i = 0; i < 99; ++i)
     var value = '#' + i.toString();
-    Console.log("Value: " + value)
+    console.log("Value: " + value)
     $(value).click(function(e){
         $.ajax({
             type: "POST",
