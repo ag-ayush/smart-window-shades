@@ -13,6 +13,13 @@ for(var i = 0; i < 101; ++i) {
             $.get("http://129.21.76.35:5000/gpio/get/current/", function(data, status){
                 alert("Data: " + data + "\nStatus: " + status);
              });
+//            $.ajax({
+//                type: "GET",
+//                url: "http://129.21.76.35:5000/gpio/get/current/",
+//                alert()
+//                success: function() { console.log("Success");},
+//                error: function() { console.log("Fail");}
+//            });
         });
     })(i);
 }
@@ -29,7 +36,7 @@ for(var i = 0; i < 101; ++i) {
 
 $('#up').click(function(e){
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: "http://129.21.76.35:5000/gpio/set/current/up",
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
@@ -38,7 +45,7 @@ $('#up').click(function(e){
 
 $('#down').click(function(e){
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: "http://129.21.76.35:5000/gpio/set/current/down",
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
