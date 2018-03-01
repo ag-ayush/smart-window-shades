@@ -54,8 +54,8 @@
   <center>
   <h2 class="card-header">Is your shade currently all the way up or down?</h2>
   <div class="card-body">
-    <button type="button" class="btn btn-secondary" name="up" value="/gpio/set/current/up" class="button">UP</button>
-    <button type="button" class="btn btn-secondary" name="down" value="/gpio/set/current/down" class="button">DOWN</button>
+    <button type="button" class="btn btn-secondary" id="up" name="up" value="/gpio/set/current/up" class="button">UP</button>
+    <button type="button" class="btn btn-secondary" id="down" name="down" value="/gpio/set/current/down" class="button">DOWN</button>
   </div>
   </center>
 </div>
@@ -68,7 +68,7 @@
         <input class="form-control" placeholder="200" id="inputDefault" type="text">
         <p></p>
         <!--TODO: change steps to value of the input!-->
-        <button type="button" class="btn btn-secondary" name="submit" value="/gpio/set/steps/<string:steps>/" class="button">SET</button>
+        <button type="button" class="btn btn-secondary" id="steps" name="steps" value="/gpio/set/steps/<string:steps>/" class="button">SET</button>
     </div>
     </center>
 </div>

@@ -89,6 +89,7 @@ def setCurrent(current):
         CURRENT = 0
     elif current.lower() == "down":
         CURRENT = 100
+    print("CURRENT IS", CURRENT)
     return "{200}"
 
 
@@ -102,6 +103,7 @@ Path: gpio/set/#
 def setCurrent(steps):
     global FULL_REV_STEPS
     FULL_REV_STEPS = int(steps)
+    print("STEPS: ", FULL_REV_STEPS)
     return "{200}"
 
 
@@ -114,6 +116,7 @@ Path: gpio/set/current
 @cross_origin()
 def getCurrent():
     global CURRENT
+    print("CURRENT GET:", CURRENT)
     return "{"+str(CURRENT)+", 200}"
 
 
