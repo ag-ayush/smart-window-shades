@@ -121,14 +121,20 @@ def getCurrent():
 
 
 """
-This is to move the motor by the steps
+This is to move the motor by the steps, useful for debugging
 Path: gpio/move/#
 % is the amount of curtain one wants open.
 """
 @app.route('/gpio/move/<string:steps>', methods=["POST"])
 @cross_origin()
-def move_motor(steps):
+def move_motor_debugger(steps):
     print("MOVE MOTOR SOME STEPS", steps)
+
+    #direction
+    if int(steps) < 0:
+        GPIO.output(DIRECTION_PIN, True)
+    else:
+        GPIO.output(DIRECTION_PIN, False)
 
     # track the number of steps taken
     StepCounter = 0
@@ -136,7 +142,7 @@ def move_motor(steps):
     WaitTime = 0.001
 
     # 200 Steps = 1 Revolution
-    while StepCounter < int(steps):
+    while StepCounter < abs(int(steps)):
         # turning the gpio on and off is equivalent of taking a step
         GPIO.output(STEP_PIN, True)
         GPIO.output(STEP_PIN, False)
