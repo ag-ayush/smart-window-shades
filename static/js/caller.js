@@ -58,7 +58,7 @@ $('#steps').click(function(e){
 });
 
 // Moves motor by steps
-$('#steps').click(function(e){
+$('#move').click(function(e){
     var val = $("#input_steps").val()
     $.ajax({
         type: "POST",

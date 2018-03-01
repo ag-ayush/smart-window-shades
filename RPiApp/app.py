@@ -128,10 +128,23 @@ Path: gpio/move/#
 @app.route('/gpio/move/<string:steps>', methods=["POST"])
 @cross_origin()
 def move_motor(steps):
-    global FULL_REV_STEPS
-    percent = ((steps*1.0)/(FULL_REV_STEPS))*100
-    moveShades(percent)
-    print("MOVE MOTOR SOME STEPS", percent)
+    print("MOVE MOTOR SOME STEPS", steps)
+
+    # track the number of steps taken
+    StepCounter = 0
+    # wait time controls speed, 0.001 is the smallest value
+    WaitTime = 0.001
+
+    # 200 Steps = 1 Revolution
+    while StepCounter < steps:
+        # turning the gpio on and off is equivalent of taking a step
+        GPIO.output(STEP_PIN, True)
+        GPIO.output(STEP_PIN, False)
+        StepCounter += 1
+
+        # Wait before taking the next step...this controls rotation speed
+        time.sleep(WaitTime)
+
     return '{"status":200}'
 
 
