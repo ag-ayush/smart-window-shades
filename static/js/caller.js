@@ -28,7 +28,8 @@ for(var i = 0; i < 101; ++i) {
 function get_shade_height(){
     $.get("http://129.21.76.35:5000/gpio/get/current/", function(data, status){
                 //data is jsonp, I want to print the first value in it as html
-                alert("Data: " + data + "\nData[0]: " + data[0]);
+                dataType: "jsonp"
+                alert("Data: " + data + "\nData[0]: " + data[1]);
              });
 }
 
