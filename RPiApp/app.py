@@ -80,8 +80,7 @@ This is to set the current path
 Path: gpio/set/#
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/set/current/<string:current>/', methods=["GET"])
-@cross_origin()
+@app.route('/gpio/set/current/<string:current>', methods=["GET"])
 def setCurrent(current):
     global CURRENT
 
@@ -99,7 +98,7 @@ This is to set the steps
 Path: gpio/set/#
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/set/steps/<string:steps>/', methods=["POST"])
+@app.route('/gpio/set/steps/<string:steps>', methods=["POST"])
 @cross_origin()
 def setSteps(steps):
     global FULL_REV_STEPS
