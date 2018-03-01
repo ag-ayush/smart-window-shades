@@ -15,16 +15,7 @@ for(var i = 0; i < 101; ++i) {
     })(i);
 }
 
-/* Original */
-//$('#100').click(function(e){
-//    $.ajax({
-//        type: "POST",
-//        url: "http://129.21.76.35:5000/gpio/100/",
-//        success: function() { console.log("SUCCESS");},
-//        error: function() { console.log("FAIL");}
-//    });
-//});
-
+//Put shade height on the webpage
 function put_shade_height(){
     $.get("http://129.21.76.35:5000/gpio/get/current/", function(data, status){
                 //data is jsonp, I want to print the first value in it as html
@@ -33,6 +24,7 @@ function put_shade_height(){
              });
 }
 
+//Set up or down of the curtain
 $('#up').click(function(e){
     $.ajax({
         type: "POST",
@@ -43,7 +35,6 @@ $('#up').click(function(e){
 
     put_shade_height();
 });
-
 $('#down').click(function(e){
     $.ajax({
         type: "POST",
@@ -55,13 +46,26 @@ $('#down').click(function(e){
     put_shade_height();
 });
 
-//TODO: Change the string:steps
+// Set MAX steps on the Pi
 $('#steps').click(function(e){
-    var val = $("#input").val()
+    var val = $("#input_count").val()
     $.ajax({
         type: "POST",
         url: "http://129.21.76.35:5000/gpio/set/steps/" + val,
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
+});
+
+// Moves motor by steps
+$('#steps').click(function(e){
+    var val = $("#input_steps").val()
+    $.ajax({
+        type: "POST",
+        url: "http://129.21.76.35:5000/gpio/move/" + val,
+        success: function() { console.log("SUCCESS");},
+        error: function() { console.log("FAIL");}
+    });
+
+    put_shade_height();
 });

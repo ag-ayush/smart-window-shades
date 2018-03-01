@@ -120,6 +120,21 @@ def getCurrent():
     return '{"data":"'+str(CURRENT)+'" , "status":200}'
 
 
+"""
+This is to move the motor by the steps
+Path: gpio/move/#
+% is the amount of curtain one wants open.
+"""
+@app.route('/gpio/move/<string:steps>', methods=["POST"])
+@cross_origin()
+def move_motor(steps):
+    global FULL_REV_STEPS
+    percent = ((steps*1.0)/(FULL_REV_STEPS))*100
+    moveShades(percent)
+    print("MOVE MOTOR SOME STEPS", percent)
+    return '{"status":200}'
+
+
 """ Convert software to hardware output """
 def motor_output(percent):
     # Convert percent to steps

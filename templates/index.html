@@ -65,16 +65,26 @@
     <h2 class="card-header">Motor Steps Count</h2>
     <p>From all the up, to all the way down. CAUTION: Setting it too high may break the motor!!</p>
     <div class="card-body">
-        <input class="form-control" placeholder="200" id="input" name="input" type="text">
+        <input class="form-control" placeholder="200" id="input_count" name="input_count" type="text">
         <p></p>
-        <!--TODO: change steps to value of the input!-->
         <button type="button" class="btn btn-secondary" id="steps" name="steps" value="/gpio/set/steps/<string:steps>/" class="button">SET</button>
     </div>
     </center>
 </div>
 
-<script src="/static/js/caller.js"></script>
+<div class="card text-white bg-dark mb-3" style="max-width: 40rem; margin:0 auto;">
+    <center>
+    <h2 class="card-header">Move Motor by Steps</h2>
+    <p>Positive number for forwards, negative number for backwards. CAUTION: Moving it too many steps may break the motor or the part!!</p>
+    <div class="card-body">
+        <input class="form-control" placeholder="10" id="input_steps" name="input_steps" type="text">
+        <p></p>
+        <button type="button" class="btn btn-secondary" id="move" name="move" value="/gpio/set/steps/<string:steps>/" class="button">MOVE</button>
+    </div>
+    </center>
+</div>
 
+<script src="/static/js/caller.js"></script>
 
 </div>
 </body>
