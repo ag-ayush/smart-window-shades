@@ -112,7 +112,7 @@ This is to get the current path
 Path: gpio/set/current
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/get/current', methods=["GET"])
+@app.route('/gpio/get/current/', methods=["GET"])
 @cross_origin()
 def getCurrent():
     global CURRENT
