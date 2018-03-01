@@ -72,7 +72,7 @@ def moveShades(percent):
     motor_output(output_percentage)
 
     # Returns 200 suggesting all went well.
-    return "{200}"
+    return '{"status":200}'
 
 
 """
@@ -90,7 +90,7 @@ def setCurrent(current):
         CURRENT = 100
 
     print("CURRENT IS", CURRENT)
-    return "{200}"
+    return '{"status":200}'
 
 
 """
@@ -104,7 +104,7 @@ def setSteps(steps):
     global FULL_REV_STEPS
     FULL_REV_STEPS = int(steps)
     print("STEPS: ", FULL_REV_STEPS)
-    return "{200}"
+    return '{"status":200}'
 
 
 """
@@ -117,7 +117,7 @@ Path: gpio/set/current
 def getCurrent():
     global CURRENT
     print("CURRENT GET:", CURRENT)
-    return "{"+str(CURRENT)+", 200}"
+    return '{"data":"'+str(CURRENT)+', "status":200}'
 
 
 """ Convert software to hardware output """
