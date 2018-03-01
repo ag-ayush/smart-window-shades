@@ -10,7 +10,7 @@ for(var i = 0; i < 101; ++i) {
                 error: function() { console.log("Fail");}
             });
 
-            get_shade_height();
+            put_shade_height();
         });
     })(i);
 }
@@ -25,11 +25,11 @@ for(var i = 0; i < 101; ++i) {
 //    });
 //});
 
-function get_shade_height(){
+function put_shade_height(){
     $.get("http://129.21.76.35:5000/gpio/get/current/", function(data, status){
                 //data is jsonp, I want to print the first value in it as html
                 var obj = JSON.parse(data);
-                $('#perc').html(obj["data"] + "%");
+                $('#perc').html(obj["data"] + " %");
              });
 }
 
@@ -40,6 +40,8 @@ $('#up').click(function(e){
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
+
+    put_shade_height();
 });
 
 $('#down').click(function(e){
@@ -49,13 +51,16 @@ $('#down').click(function(e){
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
+
+    put_shade_height();
 });
 
 //TODO: Change the string:steps
 $('#steps').click(function(e){
+    var val = $("#input").val()
     $.ajax({
         type: "POST",
-        url: "http://129.21.76.35:5000/gpio/set/steps/<string:steps>/",
+        url: "http://129.21.76.35:5000/gpio/set/steps/" + val,
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
