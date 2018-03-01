@@ -117,7 +117,7 @@ Path: gpio/set/current
 def getCurrent():
     global CURRENT
     print("CURRENT GET:", CURRENT)
-    return '{"data":"'+str(CURRENT)+', "status":200}'
+    return '{"data":"'+str(CURRENT)+'" , "status":200}'
 
 
 """ Convert software to hardware output """

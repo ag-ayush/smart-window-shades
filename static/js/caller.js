@@ -29,7 +29,7 @@ function get_shade_height(){
     $.get("http://129.21.76.35:5000/gpio/get/current/", function(data, status){
                 //data is jsonp, I want to print the first value in it as html
                 var obj = JSON.parse(data);
-                alert("Data: " + obj + "\nData[0]: " + obj[1]);
+                alert("Data: " + obj + "\nData[0]: " + obj["data"]);
              });
 }
 
