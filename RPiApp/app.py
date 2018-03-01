@@ -80,15 +80,16 @@ This is to set the current path
 Path: gpio/set/#
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/set/current/<string:current>/', methods=["POST"])
+@app.route('/gpio/set/current/<string:current>/', methods=["GET"])
 @cross_origin()
 def setCurrent(current):
     global CURRENT
 
-    if current.lower() == "up":
+    if current == "up":
         CURRENT = 0
-    elif current.lower() == "down":
+    elif current == "down":
         CURRENT = 100
+
     print("CURRENT IS", CURRENT)
     return "{200}"
 
@@ -100,7 +101,7 @@ Path: gpio/set/#
 """
 @app.route('/gpio/set/steps/<string:steps>/', methods=["POST"])
 @cross_origin()
-def setCurrent(steps):
+def setSteps(steps):
     global FULL_REV_STEPS
     FULL_REV_STEPS = int(steps)
     print("STEPS: ", FULL_REV_STEPS)
@@ -112,7 +113,7 @@ This is to get the current path
 Path: gpio/set/current
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/get/current', methods=["GET"])
+@app.route('/gpio/get/current', methods=["POST"])
 @cross_origin()
 def getCurrent():
     global CURRENT

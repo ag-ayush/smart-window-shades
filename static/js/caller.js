@@ -29,15 +29,16 @@ for(var i = 0; i < 101; ++i) {
 
 $('#up').click(function(e){
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "http://129.21.76.35:5000/gpio/set/current/up",
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
     });
 });
+
 $('#down').click(function(e){
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "http://129.21.76.35:5000/gpio/set/current/down",
         success: function() { console.log("SUCCESS");},
         error: function() { console.log("FAIL");}
