@@ -136,7 +136,7 @@ def move_motor(steps):
     WaitTime = 0.001
 
     # 200 Steps = 1 Revolution
-    while StepCounter < steps:
+    while StepCounter < int(steps):
         # turning the gpio on and off is equivalent of taking a step
         GPIO.output(STEP_PIN, True)
         GPIO.output(STEP_PIN, False)
@@ -144,6 +144,7 @@ def move_motor(steps):
 
         # Wait before taking the next step...this controls rotation speed
         time.sleep(WaitTime)
+    GPIO.output(STEP_PIN, False)
 
     return '{"status":200}'
 
@@ -169,6 +170,7 @@ def motor_output(percent):
 
         # Wait before taking the next step...this controls rotation speed
         time.sleep(WaitTime)
+    GPIO.output(STEP_PIN, False)
 
 
 # The "host=0.0.0.0" part is essential to telling the system that we want the app visible to the

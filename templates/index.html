@@ -65,7 +65,7 @@
     <h2 class="card-header">Motor Steps Count</h2>
     <p>From all the up, to all the way down. CAUTION: Setting it too high may break the motor!!</p>
     <div class="card-body">
-        <input class="form-control" placeholder="200" id="input_count" name="input_count" type="text">
+        <input class="form-control" placeholder="200" id="input_count" name="input_count" type="number">
         <p></p>
         <button type="button" class="btn btn-secondary" id="steps" name="steps" value="/gpio/set/steps/<string:steps>/" class="button">SET</button>
     </div>
@@ -78,7 +78,7 @@
     <p>Positive number for forwards, negative number for backwards. CAUTION: Moving it too many steps may break the motor or the part!!</p>
     <p>NOTE: Refresh the page after using this to move the motor and you will need to set the defaults again! This is for debugging.</p>
     <div class="card-body">
-        <input class="form-control" placeholder="10" id="input_steps" name="input_steps" type="text">
+        <input class="form-control" placeholder="10" id="input_steps" name="input_steps" type="number">
         <p></p>
         <button type="button" class="btn btn-secondary" id="move" name="move" value="/gpio/set/steps/<string:steps>/" class="button">MOVE</button>
     </div>
