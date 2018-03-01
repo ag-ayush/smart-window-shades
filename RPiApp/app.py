@@ -17,6 +17,7 @@ GPIO.setup(DIRECTION_PIN, GPIO.OUT)
 GPIO.setup(STEP_PIN, GPIO.OUT)
 
 """ Number of steps of the motor to reach 100% """
+global FULL_REV_STEPS
 FULL_REV_STEPS = 200
 
 """ Always starts down completely """
@@ -44,7 +45,7 @@ Path: gpio/%
 """
 @app.route('/gpio/<string:percent>/', methods=["POST"])
 @cross_origin()
-def setPinLevel2(percent):
+def moveShades(percent):
     # Make sure percent is between 0 and 100.
     if int(percent) > 100:
         percent = "100"
@@ -72,6 +73,48 @@ def setPinLevel2(percent):
 
     # Returns 200 suggesting all went well.
     return "{200}"
+
+
+"""
+This is to set the current path
+Path: gpio/set/#
+% is the amount of curtain one wants open.
+"""
+@app.route('/gpio/set/current/<string:current>/', methods=["POST"])
+@cross_origin()
+def setCurrent(current):
+    global CURRENT
+
+    if current.lower() == "up":
+        CURRENT = 0
+    elif current.lower() == "down":
+        CURRENT = 100
+    return "{200}"
+
+
+"""
+This is to set the steps
+Path: gpio/set/#
+% is the amount of curtain one wants open.
+"""
+@app.route('/gpio/set/steps/<string:steps>/', methods=["POST"])
+@cross_origin()
+def setCurrent(steps):
+    global FULL_REV_STEPS
+    FULL_REV_STEPS = int(steps)
+    return "{200}"
+
+
+"""
+This is to get the current path
+Path: gpio/set/current
+% is the amount of curtain one wants open.
+"""
+@app.route('/gpio/get/current', methods=["GET"])
+@cross_origin()
+def getCurrent():
+    global CURRENT
+    return "{"+str(CURRENT)+", 200}"
 
 
 """ Convert software to hardware output """

@@ -22,7 +22,12 @@
   </button>
 </nav>
 
-<div class="card text-white bg-dark mb-3" >
+<div class="jumbotron">
+  <h1 class="display-3">Welcome to Shade Control System!</h1>
+    <p class="lead">Source can be found <a href="https://github.com/axg4975/smart-window-shades">here</a>!</p>
+  </p>
+
+<div class="card text-white bg-dark mb-3" style="max-width: 40rem; margin:0 auto;">
   <center>
   <h2 class="card-header">How open would you like your shades to be?</h2>
   <div class="card-body">
@@ -35,7 +40,42 @@
   </center>
 </div>
 
+<div class="card text-white bg-dark mb-3" style="max-width: 40rem; margin:0 auto;">
+  <center>
+  <h2 class="card-header">Current Shade Percentage</h2>
+  <div class="card-body">
+      <!--TODO: Get percentage from the PI-->
+      <h3>100 %</h3>
+  </div>
+  </center>
+</div>
+
+<div class="card text-white bg-dark mb-3" style="max-width: 40rem; margin:0 auto;">
+  <center>
+  <h2 class="card-header">Is your shade currently all the way up or down?</h2>
+  <div class="card-body">
+    <button type="button" class="btn btn-secondary" name="up" value="/gpio/set/current/up" class="button">UP</button>
+    <button type="button" class="btn btn-secondary" name="down" value="/gpio/set/current/down" class="button">DOWN</button>
+  </div>
+  </center>
+</div>
+
+<div class="card text-white bg-dark mb-3" style="max-width: 40rem; margin:0 auto;">
+    <center>
+    <h2 class="card-header">Motor Steps Count</h2>
+    <p>From all the up, to all the way down. CAUTION: Setting it too high may break the motor!!</p>
+    <div class="card-body">
+        <input class="form-control" placeholder="200" id="inputDefault" type="text">
+        <p></p>
+        <!--TODO: change steps to value of the input!-->
+        <button type="button" class="btn btn-secondary" name="submit" value="/gpio/set/steps/<string:steps>/" class="button">SET</button>
+    </div>
+    </center>
+</div>
+
 <script src="/static/js/caller.js"></script>
 
+
+</div>
 </body>
 </html>
