@@ -1,5 +1,6 @@
-# Smart Curtain
-IOT/Smart Window Shades
+# Smart Window Shades (IOT)
+
+Smart Shades is a web service that allows one to control window shades using a website. The hardware requirement is a Raspberry Pi(connected to the internet), Stepper Motor, Housing for stepper motor (3D printed), Stepper Motor Driver (I used the Pololu A4988), 10K Ohm Resistor, and a domain. The application uses python, Flask, OpenShift in the back end, Bootstrap, JavaScript, and Ajax. In short, there are two Flask apps running, one on [shades.csh.rit.edu](shades.csh.rit.edu) and one on the Pi. The flask app on CSH website has the JavaScript and Ajax to make POST requests to the Flask app on the Pi, which can then take care of changing the shades.
 
 # Wiring
 * Refer to [Minimal wiring diagram](https://www.google.com/search?q=minimal+wiring+diagram+stepper+motor)
@@ -14,10 +15,3 @@ GND connects to ground. A GPIO diagram, such as that for
 [Raspberry Pi Model B+](pi4j.com/pins/model-b-plus.html) can be very helpful here.
 
 * Note: You may need to set the current limit on your Stepper Motor Driver.
-
-# Some required packages
-* python-dev
-* python-pip
-* pip ipython
-* pip RPi.GPIO
-* pip flask-cors
