@@ -15,3 +15,13 @@ GND connects to ground. A GPIO diagram, such as that for
 [Raspberry Pi Model B+](pi4j.com/pins/model-b-plus.html) can be very helpful here.
 
 * Note: You may need to set the current limit on your Stepper Motor Driver.
+
+# Requirements
+* [Flask](http://flask.pocoo.org/) and [flask-cors](https://pypi.python.org/pypi/Flask-Cors) are required to run this project, which also means you will need Python and pip.
+* A raspberry pi is also required to be able to run this project.
+
+# Post Notes
+* I recommend using [sshfs](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) when developing using Raspberry Pi as it makes life much easier and developing much quicker.
+
+
+For more information regarding the story behind this please check out the [this blog post](https://blog.csh.rit.edu/).
