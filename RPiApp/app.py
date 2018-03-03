@@ -182,6 +182,6 @@ def motor_output(percent):
 # The "host=0.0.0.0" part is essential to telling the system that we want the app visible to the
 # outside world.
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, ssl_context=('/etc/letsencrypt/live/agoel-rpi.student.rit.edu-0001/fullchain.pem',
-                                                    '/etc/letsencrypt/live/agoel-rpi.student.rit.edu-0001/privkey.pem'))
+    app.run(host='0.0.0.0', port=5000, ssl_context=('/etc/letsencrypt/live/agoel-rpi.csh.rit.edu/fullchain.pem',
+                                                    '/etc/letsencrypt/live/agoel-rpi.csh.rit.edu/privkey.pem'))
     # app.run(host='0.0.0.0', port=5000)
