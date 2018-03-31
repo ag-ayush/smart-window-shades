@@ -165,7 +165,7 @@ def motor_output(percent):
     # track the number of steps taken
     StepCounter = 0
     # wait time controls speed, 0.001 is the smallest value
-    WaitTime = 0.001
+    WaitTime = 0.01
 
     # 200 Steps = 1 Revolution
     while StepCounter < steps:
@@ -182,6 +182,6 @@ def motor_output(percent):
 # The "host=0.0.0.0" part is essential to telling the system that we want the app visible to the
 # outside world.
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, ssl_context=('/etc/letsencrypt/live/agoel-rpi.csh.rit.edu/fullchain.pem',
-                                                    '/etc/letsencrypt/live/agoel-rpi.csh.rit.edu/privkey.pem'))
+    app.run(host='0.0.0.0', port=5000, ssl_context=('/etc/letsencrypt/live/agrpi.csh.rit.edu/fullchain.pem',
+                                                    '/etc/letsencrypt/live/agrpi.csh.rit.edu/privkey.pem'))
     # app.run(host='0.0.0.0', port=5000)
