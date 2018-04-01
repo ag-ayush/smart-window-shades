@@ -23,6 +23,8 @@ function put_shade_height(){
                 $('#perc').html(obj["data"] + " %");
              });
 }
+//put the current shade height up on script load
+put_shade_height();
 
 //Set up or down of the curtain
 $('#up').click(function(e){
