@@ -5,7 +5,7 @@ for(var i = 0; i < 101; ++i) {
         $(value).click(function(e){
             $.ajax({
                 type: "POST",
-                url: "https://agoel-rpi.student.rit.edu:5000/gpio/" + i.toString() + "/",
+                url: "https://agoel-rpi.student.rit.edu:5000/gpio/" + i.toString(),
                 success: function() { console.log("Success");},
                 error: function() { console.log("Fail");}
             });
@@ -17,7 +17,7 @@ for(var i = 0; i < 101; ++i) {
 
 //Put shade height on the webpage
 function put_shade_height(){
-    $.get("https://agoel-rpi.student.rit.edu:5000/gpio/get/current/", function(data, status){
+    $.get("https://agoel-rpi.student.rit.edu:5000/gpio/get/current", function(data, status){
                 //data is jsonp, I want to print the first value in it as html
                 var obj = JSON.parse(data);
                 $('#perc').html(obj["data"] + " %");

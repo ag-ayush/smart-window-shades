@@ -43,7 +43,7 @@ This is the main function, it controls the motors.
 Path: gpio/%
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/<string:percent>/', methods=["POST"])
+@app.route('/gpio/<string:percent>', methods=["POST"])
 @cross_origin()
 def moveShades(percent):
     # Make sure percent is between 0 and 100.
@@ -112,7 +112,7 @@ This is to get the current path
 Path: gpio/set/current
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/get/current/', methods=["GET"])
+@app.route('/gpio/get/current', methods=["GET"])
 @cross_origin()
 def getCurrent():
     global CURRENT
