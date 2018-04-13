@@ -13,8 +13,6 @@ GPIO.setwarnings(False)
 """ Stepper motor setup """
 DIRECTION_PIN = 38
 STEP_PIN = 37
-GPIO.setup(DIRECTION_PIN, GPIO.OUT)
-GPIO.setup(STEP_PIN, GPIO.OUT)
 
 """ Number of steps of the motor to reach 100% """
 global FULL_REV_STEPS
@@ -185,6 +183,8 @@ if __name__ == "__main__":
     port = input("Port number: ")
     DIRECTION_PIN = int(input("Direction pin number on PI: "))
     STEP_PIN = int(input("Step pin number on PI: "))
+    GPIO.setup(DIRECTION_PIN, GPIO.OUT)
+    GPIO.setup(STEP_PIN, GPIO.OUT)
 
     app.run(host='0.0.0.0', port=port, ssl_context=('/etc/letsencrypt/live/agrpi.csh.rit.edu/fullchain.pem',
                                                     '/etc/letsencrypt/live/agrpi.csh.rit.edu/privkey.pem'))
