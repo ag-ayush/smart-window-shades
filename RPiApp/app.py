@@ -77,7 +77,7 @@ def moveShades(percent):
 
 """
 This is to set the current path
-Path: gpio/set/#
+Path: gpio/set/<string:UP or DOWN>
 % is the amount of curtain one wants open.
 """
 @app.route('/gpio/set/current/<string:current>', methods=["POST"])
