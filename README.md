@@ -24,4 +24,4 @@ GND connects to ground. A GPIO diagram, such as that for
 * I recommend using [sshfs](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) when developing using Raspberry Pi as it makes life much easier and developing much quicker.
 
 
-For more information regarding the story behind this please check out the [this blog post](https://blog.csh.rit.edu/).
+For more information regarding the story behind this please check out the [this blog post](http://ayushgoel.me/blog/smart-window-shades/).
