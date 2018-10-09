@@ -36,7 +36,7 @@ elif direction == 'right':
 # track the number of steps taken
 StepCounter = 0
 # wait time controls speed
-WaitTime = 0.001
+WaitTime = 0.005
 
 # 200 Steps = 1 Revolution
 while StepCounter < steps:

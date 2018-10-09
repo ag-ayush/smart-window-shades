@@ -41,7 +41,7 @@ This is the main function, it controls the motors.
 Path: gpio/%
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/<string:percent>', methods=["POST"])
+@app.route('/gpio/<string:percent>', methods=["GET", "POST"])
 @cross_origin()
 def moveShades(percent):
     # Make sure percent is between 0 and 100.
@@ -78,7 +78,7 @@ This is to set the current path
 Path: gpio/set/<string:UP or DOWN>
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/set/current/<string:current>', methods=["POST"])
+@app.route('/gpio/set/current/<string:current>', methods=["GET", "POST"])
 def setCurrent(current):
     global CURRENT
 
@@ -96,7 +96,7 @@ This is to set the steps
 Path: gpio/set/#
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/set/steps/<string:steps>', methods=["POST"])
+@app.route('/gpio/set/steps/<string:steps>', methods=["GET", "POST"])
 @cross_origin()
 def setSteps(steps):
     global FULL_REV_STEPS
@@ -123,10 +123,10 @@ This is to move the motor by the steps, useful for debugging
 Path: gpio/move/#
 % is the amount of curtain one wants open.
 """
-@app.route('/gpio/move/<string:steps>', methods=["POST"])
+@app.route('/gpio/move/<string:steps>', methods=["GET", "POST"])
 @cross_origin()
 def move_motor_debugger(steps):
-    print("MOVE MOTOR SOME STEPS", steps)
+    print("MOVE MOTOR by", steps, "STEPS")
 
     #direction
     if int(steps) < 0:
@@ -137,7 +137,7 @@ def move_motor_debugger(steps):
     # track the number of steps taken
     StepCounter = 0
     # wait time controls speed, 0.001 is the smallest value
-    WaitTime = 0.001
+    WaitTime = 0.005
 
     # 200 Steps = 1 Revolution
     while StepCounter < abs(int(steps)):
@@ -186,6 +186,6 @@ if __name__ == "__main__":
     GPIO.setup(DIRECTION_PIN, GPIO.OUT)
     GPIO.setup(STEP_PIN, GPIO.OUT)
 
-    app.run(host='0.0.0.0', port=port, ssl_context=('/etc/letsencrypt/live/agrpi.csh.rit.edu/fullchain.pem',
-                                                    '/etc/letsencrypt/live/agrpi.csh.rit.edu/privkey.pem'))
-    # app.run(host='0.0.0.0', port=5000)
+#    app.run(host='0.0.0.0', port=port, ssl_context=('/etc/letsencrypt/csr/0000_csr-certbot.pem',
+#                                                    '/etc/letsencrypt/keys/0000_key-certbot.pem'))
+    app.run(host='0.0.0.0', port=5000)
