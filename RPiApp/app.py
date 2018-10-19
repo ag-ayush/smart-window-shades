@@ -183,9 +183,8 @@ def motor_output(percent):
 # The "host=0.0.0.0" part is essential to telling the system that we want the app visible to the
 # outside world.
 if __name__ == "__main__":
-    port = input("Port number: ")	   # DIRECTION_PIN = int(input("Direction pin number on PI: "))
-    DIRECTION_PIN = int(input("Direction pin number on PI: "))	   # STEP_PIN = int(input("Step pin number on PI: "))
-    
+   # DIRECTION_PIN = int(input("Direction pin number on PI: "))
+   # STEP_PIN = int(input("Step pin number on PI: "))
     GPIO.setup(DIRECTION_PIN, GPIO.OUT)
     GPIO.setup(STEP_PIN, GPIO.OUT)
 
