@@ -25,18 +25,14 @@ function put_shade_height(){
 
 //Move up or down by 25 steps
 $('#moveUP').click(function(e){
-    $.get("http://shades.student.rit.edu:5000/gpio/get/current", function(data, status){
-                //data is jsonp, I want to print the first value in it as html
-                var obj = JSON.parse(data);
-                int perc = parseint(obj["data"],10) + 5
-                $.ajax({
-                    type: "POST",
-                    url: "http://shades.student.rit.edu:5000/gpio/perc",
-                    success: function() { console.log("SUCCESS");},
-                    error: function() { console.log("FAIL");}
-                });
-    });
-    put_shade_height();
+  $.ajax({
+      type: "POST",
+      url: "http://shades.student.rit.edu:5000/gpio/move/25",
+      success: function() { console.log("SUCCESS");},
+      error: function() { console.log("FAIL");}
+  });
+
+  put_shade_height();
 });
 $('#moveDOWN').click(function(e){
     $.ajax({
