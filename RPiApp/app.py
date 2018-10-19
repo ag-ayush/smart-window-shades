@@ -29,7 +29,7 @@ CORS(app)
 """
 Default page
 
-Only used for testing when no public server is up. 
+Only used for testing when no public server is up.
 """
 @app.route("/")
 def index():
@@ -127,6 +127,9 @@ Path: gpio/move/#
 @cross_origin()
 def move_motor_debugger(steps):
     print("MOVE MOTOR by", steps, "STEPS")
+    percentage_change = steps/FULL_REV_STEPS
+    global CURRENT
+    CURRENT += percentage_change
 
     #direction
     if int(steps) < 0:
@@ -180,9 +183,9 @@ def motor_output(percent):
 # The "host=0.0.0.0" part is essential to telling the system that we want the app visible to the
 # outside world.
 if __name__ == "__main__":
-    port = input("Port number: ")
-    DIRECTION_PIN = int(input("Direction pin number on PI: "))
-    STEP_PIN = int(input("Step pin number on PI: "))
+    port = input("Port number: ")	   # DIRECTION_PIN = int(input("Direction pin number on PI: "))
+    DIRECTION_PIN = int(input("Direction pin number on PI: "))	   # STEP_PIN = int(input("Step pin number on PI: "))
+    
     GPIO.setup(DIRECTION_PIN, GPIO.OUT)
     GPIO.setup(STEP_PIN, GPIO.OUT)
 
